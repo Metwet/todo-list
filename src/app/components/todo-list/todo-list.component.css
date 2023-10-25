@@ -2,3 +2,18 @@
     margin: 0 auto;
     max-width: 800px;
 }
+
+.sort-buttons {
+    margin-bottom: 10px;
+    display: flex;
+    gap: 40px;
+}
+
+.sort-btn {
+    padding: 5px;
+    border: 2px solid blue;
+    border-radius: 5px;
+    color: blue;
+    background-color: rgb(230, 236, 248);
+    cursor: pointer;
+}

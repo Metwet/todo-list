@@ -17,7 +17,7 @@ export class AddItemComponent {
     title: '',
     description: '',
     deadline: '',
-    created: new Date()
+    created: this.formatDate(new Date()) || ''
   }
 
   showMessage:boolean = false;
@@ -35,7 +35,7 @@ export class AddItemComponent {
         title: this.newItem.title,
         description: this.newItem.description,
         deadline: this.newItem.deadline,
-        created: this.newItem.created
+        created: this.formatDate(new Date()) || ''
       };
       this.itemsService.addItem(newItemCopy);
       this.showMessage = false;
@@ -47,6 +47,6 @@ export class AddItemComponent {
   }
 
   formatDate(date: Date): string | null {    
-    return this.datePipe.transform(date, 'yyyy-MM-ddTHH:mm', 'en');
+    return this.datePipe.transform(date, 'yyyy-MM-ddTHH:mm:ss', 'en');
   }
 }

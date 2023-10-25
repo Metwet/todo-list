@@ -1,5 +1,9 @@
 <div class="todo-list">
     <app-add-item></app-add-item>
+    <div class="sort-buttons">
+        <button (click)="sortItemsByCreated()" class="sort-btn">Сортировать по дате создания</button>
+        <button (click)="sortItemsByDeadline()" class="sort-btn">Сортировать по сроку выполнения</button>
+    </div>
     <app-item *ngFor="let item of items" [item]="item"></app-item>
     <h3 *ngIf="!items.length">Список задач пуст.</h3>
 </div>
