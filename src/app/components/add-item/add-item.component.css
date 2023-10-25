@@ -1,0 +1,42 @@
+.add-item__block {
+    padding: 10px;
+    margin-bottom: 20px;
+}
+
+.form-item > * {
+    display: flex;
+    gap: 40px;
+    margin-bottom: 10px;
+    max-width: 500px;
+    width: 100%;
+}
+
+.lable {
+    max-width: 160px;
+    width: 100%;
+}
+
+.input {
+    width: 100%;
+    padding: 4px;
+}
+
+.input-deadline {
+    text-align: center;
+}
+
+.btn {
+    width: 100%;
+    text-align: center;
+    padding: 10px;
+    background: green;
+    outline: none;
+    border: none;
+    border-radius:  10px;
+    color: azure;
+    font-size: medium;
+}
+
+.message {
+    color: brown;
+}

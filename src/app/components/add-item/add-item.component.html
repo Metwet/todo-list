@@ -1,0 +1,27 @@
+<div class="add-item__block">
+    <h3>Добавить новую задачу</h3>
+    <form (submit)="addItem()" class="form-item">
+        <div class="add-title">
+            <label for="title" class="lable">Задача:</label>
+            <input name="title" type="text" id="title" class="input" [(ngModel)]="newItem.title">
+        </div>
+
+        <div class="add-description">
+            <label for="description" class="lable">Описание задачи:</label>
+            <textarea name="description" type="text" id="description" class="input" [(ngModel)]="newItem.description"></textarea>
+        </div>
+
+        <div class="add-deadline">
+            <label for="time" class="lable">Срок выполнения:</label>
+            <input name="time" type="datetime-local" id="time" class="input input-deadline" [(ngModel)]="newItem.deadline">
+        </div>
+
+        <div *ngIf="showMessage" class="message">
+            {{ message }}
+        </div>
+
+        <div class="add-btn">
+            <button type="submit" class="btn">Создать задачу</button>
+        </div>
+    </form>
+</div>

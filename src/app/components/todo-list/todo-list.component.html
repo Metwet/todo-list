@@ -1,1 +1,5 @@
-<p>todo-list works!</p>
+<div class="todo-list">
+    <app-add-item></app-add-item>
+    <app-item *ngFor="let item of items" [item]="item"></app-item>
+    <h3 *ngIf="!items.length">Список задач пуст.</h3>
+</div>
