@@ -4,6 +4,10 @@
         <button (click)="sortItemsByCreated()" class="sort-btn">Сортировать по дате создания</button>
         <button (click)="sortItemsByDeadline()" class="sort-btn">Сортировать по сроку выполнения</button>
     </div>
-    <app-item *ngFor="let item of items" [item]="item"></app-item>
-    <h3 *ngIf="!items.length">Список задач пуст.</h3>
+    <app-item *ngFor="let item of uncompletedItems" [item]="item"></app-item>
+    <h3 *ngIf="!uncompletedItems.length">Список задач пуст.</h3>
+    <div class="complete-items" *ngIf="completedItems.length">
+        <h3>Выполненные задачи:</h3>
+        <app-item *ngFor="let item of completedItems" [item]="item"></app-item>
+    </div>
 </div>

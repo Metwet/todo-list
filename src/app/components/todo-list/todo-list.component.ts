@@ -10,28 +10,29 @@ import { ItemsService } from 'src/app/services/items.service';
 export class TodoListComponent {
   constructor(private itemsService: ItemsService){}
 
-  items: Item[] = [];
+  uncompletedItems: Item[] = [];
+  completedItems: Item[] = [];
+
   sortByCreated = false;
   sortByDeadline = false;
 
   ngOnInit():void {
-    this.itemsService.getItems().subscribe((items)=>{
-      this.items = items;
-      console.log(items);
-      
+    this.itemsService.getItems().subscribe((items)=>{      
+      this.uncompletedItems = items.filter(item => !item.done);
+      this.completedItems = items.filter(item => item.done);
     });
   }
 
   sortItemsByCreated() {
     this.sortByCreated = true;
     this.sortByDeadline = false;    
-    this.items.sort((a, b) => Date.parse(a.created) - Date.parse(b.created));
+    this.uncompletedItems.sort((a, b) => Date.parse(a.created) - Date.parse(b.created));
   }
 
   sortItemsByDeadline() {
     this.sortByCreated = false;
     this.sortByDeadline = true;
-    this.items.sort((a, b) => Date.parse(a.deadline) - Date.parse(b.deadline));
+    this.uncompletedItems.sort((a, b) => Date.parse(a.deadline) - Date.parse(b.deadline));
   }
 
 }

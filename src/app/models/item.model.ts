@@ -3,4 +3,5 @@ export interface Item {
     description?: string;
     deadline: string;
     created: string;
+    done: boolean;
 }

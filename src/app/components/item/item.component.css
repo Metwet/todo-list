@@ -1,6 +1,60 @@
 .item {
-    padding: 10px;
-    border: 2px solid blue;
+    padding: 10px 20px;
     border-radius: 10px;
     margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.completed-item {
+    background: lightgreen;
+    color: green;
+    border: 2px solid green;
+}
+  
+.uncompleted-item {
+    background: rgb(247, 247, 255);
+    color: blue;
+    border: 2px solid blue;
+}
+
+.title {
+    font-size: large;
+    font-weight: 700;
+}
+
+.item__btns > * {
+    margin-bottom: 10px;
+}
+
+.btn__block button {
+    width: 120px;
+    padding: 5px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.btn-status {
+    border: 1px solid green;
+    color: green;
+    background-color: rgb(234, 250, 236);
+}
+
+.btn-change {
+    border: 1px solid blue;
+    color: blue;
+    background-color: rgb(230, 236, 248);
+}
+
+.btn-delete {
+    border: 1px solid red;
+    color: red;
+    background-color: rgb(248, 232, 230);
+}
+
+.edit-label {
+    display: block;
+    min-width: 200px;
+    width: auto;
 }

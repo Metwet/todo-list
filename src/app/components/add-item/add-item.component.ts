@@ -17,7 +17,8 @@ export class AddItemComponent {
     title: '',
     description: '',
     deadline: '',
-    created: this.formatDate(new Date()) || ''
+    created: this.formatDate(new Date()) || '',
+    done: false
   }
 
   showMessage:boolean = false;
@@ -35,7 +36,8 @@ export class AddItemComponent {
         title: this.newItem.title,
         description: this.newItem.description,
         deadline: this.newItem.deadline,
-        created: this.formatDate(new Date()) || ''
+        created: this.formatDate(new Date()) || '',
+        done: this.newItem.done
       };
       this.itemsService.addItem(newItemCopy);
       this.showMessage = false;
