@@ -1,6 +1,7 @@
 import { Component, Input } from '@angular/core';
 import { Item } from 'src/app/models/item.model';
 import { ItemsService } from 'src/app/services/items.service';
+import { NotificationService } from 'src/app/services/notification.service';
 
 @Component({
   selector: 'app-item',
@@ -10,7 +11,7 @@ import { ItemsService } from 'src/app/services/items.service';
 export class ItemComponent {
   @Input() item!: Item;
 
-  constructor(private itemService: ItemsService) {};
+  constructor(private itemService: ItemsService, private notificationService: NotificationService) {};
 
   isEditing: boolean = false;
   editedItem!: Item;

@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { Item } from 'src/app/models/item.model';
 import { ItemsService } from 'src/app/services/items.service';
+import { NotificationService } from 'src/app/services/notification.service';
 
 @Component({
   selector: 'app-todo-list',
@@ -8,7 +9,7 @@ import { ItemsService } from 'src/app/services/items.service';
   styleUrls: ['./todo-list.component.css']
 })
 export class TodoListComponent {
-  constructor(private itemsService: ItemsService){}
+  constructor(private itemsService: ItemsService, private notificationService: NotificationService){}
 
   uncompletedItems: Item[] = [];
   completedItems: Item[] = [];
@@ -20,6 +21,7 @@ export class TodoListComponent {
     this.itemsService.getItems().subscribe((items)=>{      
       this.uncompletedItems = items.filter(item => !item.done);
       this.completedItems = items.filter(item => item.done);
+      this.notificationService.deadlineNotifications(items, 1);
     });
   }
 
